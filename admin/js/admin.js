@@ -1,18 +1,12 @@
-console.log('hello')
-
-const deployElements = document.querySelectorAll('.nextjs-preview-deploy-button');
-console.log(deployElements)
-window.onload = function() {
-    deployElements.forEach(item => {
+window.onload = function () {
+    document.querySelectorAll('.nextjs-preview-deploy-button').forEach(item => {
         item.addEventListener("click", function () {
+            let formData = new FormData();
+            formData.append('action', 'nextjs_preview_deploy_website');
+
             fetch(ajaxurl, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    action: 'nextjs_preview_deploy_website'
-                })
+                body: formData
             })
         });
     })

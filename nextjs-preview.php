@@ -28,7 +28,7 @@ require_once NEXTJS_PLUGIN_DIRECTORY . 'admin-bar.php';
  */
 add_action('admin_enqueue_scripts', function () {
     wp_enqueue_script('nextjsPreviewScripts', NEXTJS_URL_DIRECTORY . 'admin/js/admin.js', array(), false, true);
-    wp_enqueue_style('nextjsPreviewStyles', NEXTJS_URL_DIRECTORY . 'admin/css/admin.css', array(), false, true);
+    wp_enqueue_style('nextjsPreviewStyles', NEXTJS_URL_DIRECTORY . 'admin/css/admin.css');
 });
 
 /**
