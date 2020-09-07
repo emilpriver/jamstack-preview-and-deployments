@@ -6,6 +6,8 @@
  * Version:           1
  * Author:            Emil Privér
  * Author URI:        https://priver.dev
+ * License:           GPL v2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 define('NEXTJS_PLUGIN_DIRECTORY', plugin_dir_path(__FILE__));
