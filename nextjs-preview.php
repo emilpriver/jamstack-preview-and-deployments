@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Next.JS Preview
  * Plugin URI:        https://github.com/emilpriver/nextjs-preview
- * Description:       Use Next.JS with
+ * Description:       Enable preview Next.JS when sourcing from a wordpress site. Works both with REST and Graphql.
  * Version:           1
  * Author:            Emil Privér
  * Author URI:        https://priver.dev
