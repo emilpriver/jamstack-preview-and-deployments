@@ -20,9 +20,9 @@ function NextjsPreviewFieldText($args = [])
 }
 
 function NextJSPreviewFieldSelect($args = [])
-{
+{   
     ?><div>
-        <select name="<?php esc_attr($args['name']);?>">
+        <select name="<?php echo esc_attr($args['name']);?>">
             <?php foreach ($args['choices'] as $k => $v): ?>
                 <option value="<?php echo esc_attr($k);?>" <?php echo selected($k, $args['value']);?>><?php echo $v; ?></option>
             <?php endforeach;?>
