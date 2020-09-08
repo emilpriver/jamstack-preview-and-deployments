@@ -4,6 +4,7 @@ $postType = get_post_type($id);
 $previewURL = getNextjsPreviewEndpointUrl();
 $previewURLSecret = getNextjsPreviewEndpointSecret();
 $url = str_replace(' ', '', "$previewURL?id=$id&secret=$previewURLSecret&postType=$postType");
+$method = getNextjsPreviewMethod();
 ?>
 <html lang="en">
 
@@ -76,13 +77,21 @@ $url = str_replace(' ', '', "$previewURL?id=$id&secret=$previewURLSecret&postTyp
     </head>
 
     <body>
-    <?php if ($url): ?>
-        <iframe
-                id='preview'
-                src="<?php echo $url; ?>"
-                frameborder="0"
+    <?php if ($url):
+			if ($method === 'redirect') :?>
+					<script>
+						window.onload = function() {
+							window.location = "<?php echo $url; ?>"
+						}
+					</script>
+			<?php else: ?>
+				<iframe
+					id='preview'
+					src="<?php echo $url; ?>"
+					frameborder="0"
         ></iframe>
-    <?php endif;?>
+			<?php endif;
+    endif; ?>
 
     <div id="content" class="error" style="display: none;">
         <h1>Preview broken</h1>
