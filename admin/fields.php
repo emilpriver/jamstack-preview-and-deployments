@@ -1,5 +1,14 @@
 <?php
-function NextjsPreviewFieldUrl($args = [])
+/**
+ * Functions to display settings fields inside of admin
+ */
+
+ /**
+  * Display url field
+  *
+  * @return HTML
+  */
+function nextjsPreviewFieldUrl($args = [])
 {
     ?>
     <div>
@@ -9,7 +18,12 @@ function NextjsPreviewFieldUrl($args = [])
     <?php
 }
 
-function NextjsPreviewFieldText($args = [])
+/**
+ * Display text field
+ *
+ * @return HTML
+ */
+function nextjsPreviewFieldText($args = [])
 {
     ?>
     <div>
@@ -19,7 +33,12 @@ function NextjsPreviewFieldText($args = [])
     <?php
 }
 
-function NextJSPreviewFieldSelect($args = [])
+/**
+ * Display select boxes
+ *
+ * @return HTML
+ */
+function nextJSPreviewFieldSelect($args = [])
 {   
     ?><div>
         <select name="<?php echo esc_attr($args['name']);?>">
@@ -31,7 +50,12 @@ function NextJSPreviewFieldSelect($args = [])
     </div><?php
 }
 
-function NextJSPreviewFieldCheckboxes($args = [])
+/**
+ * Display checkboxes
+ *
+ * @return HTML
+ */
+function nextJSPreviewFieldCheckboxes($args = [])
 {
     $args['value'] = is_array($args['value']) ? $args['value'] : [$args['value']];?>
     <fieldset>
@@ -51,7 +75,12 @@ function NextJSPreviewFieldCheckboxes($args = [])
     <?php
 }
 
-function NextJSLineDivider()
+/**
+ * Display divider
+ *
+ * @return HTML
+ */
+function nextJSLineDivider()
 {
     ?>
     <hr>

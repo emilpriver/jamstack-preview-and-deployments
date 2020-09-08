@@ -1,9 +1,18 @@
 <?php
-function NextJSPreviewSettingsPage()
+/**
+ * This file is used to display information inside of Wordpress Admin
+ */
+
+/**
+ * Dispaly information in admin
+ * 
+ * @return HTML
+ */
+function nextJSPreviewSettingsPage()
 {
     ?>
     <div class="wrap">
-        <h1><?=get_admin_page_title();?></h1>
+        <h1><?php echo get_admin_page_title(); ?></h1>
         <p> This plugin is used to be able to send a user to a preview of your Next.JS website to show preview data.</p>
         <p> This plugin does not automatically make your Next.JS website work with preview data. You still need to make your Next.JS application be able to handle the data. </p>
         <p>
@@ -17,7 +26,7 @@ function NextJSPreviewSettingsPage()
                 </li>
             </ol>
         </p>
-        <form method="post" action="<?=esc_url(admin_url('options.php'));?>">
+        <form method="post" action="<?php echo esc_url(admin_url('options.php')); ?>">
             <?php
             settings_fields(NEXTJS_SETTINGS_OPTIONS_KEY);
             do_settings_sections(NEXTJS_SETTINGS_OPTIONS_KEY);

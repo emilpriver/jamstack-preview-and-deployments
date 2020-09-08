@@ -1,4 +1,8 @@
 <?php
+/**
+ * Admin file. Is used to register settings fields and display information
+ */
+
 require_once 'functions.php';
 require_once 'fields.php';
 require_once 'admin-html.php';
@@ -16,7 +20,7 @@ add_action('admin_init', function () {
     add_settings_field(
         'webhook_url',
         __('Build Hook URL', NEXTJS_TEXT_DOMAIN),
-        'NextjsPreviewFieldUrl',
+        'nextjsPreviewFieldUrl',
         $key,
         'general', [
             'name' => "{$key}[webhook_url]",
@@ -35,7 +39,7 @@ add_action('admin_init', function () {
     add_settings_field(
         'webhook_method',
         __('Hook Method', NEXTJS_TEXT_DOMAIN),
-        'NextJSPreviewFieldSelect',
+        'nextJSPreviewFieldSelect',
         $key,
         'general', [
             'name' => "{$key}[webhook_method]",
@@ -52,7 +56,7 @@ add_action('admin_init', function () {
     add_settings_field(
         'deployment_badge_url',
         __('Deployment Status Badge Image URL', NEXTJS_TEXT_DOMAIN),
-        'NextjsPreviewFieldUrl',
+        'nextjsPreviewFieldUrl',
         $key,
         'general', [
             'name' => "{$key}[deployment_badge_url]",
@@ -64,7 +68,7 @@ add_action('admin_init', function () {
     add_settings_field(
         'NextJSPreviewDivider1',
         '',
-        'NextJSLineDivider',
+        'nextJSLineDivider',
         $key,
         'general', [
             'name' => "{$key}[NextJSPreviewDivider1]",
@@ -76,7 +80,7 @@ add_action('admin_init', function () {
     add_settings_field(
         'next_preview_endpoint',
         __('Nextjs Preview URL', NEXTJS_TEXT_DOMAIN),
-        'NextjsPreviewFieldUrl',
+        'nextjsPreviewFieldUrl',
         $key,
         'preview', [
             'name' => "{$key}[next_preview_endpoint]",
@@ -93,7 +97,7 @@ add_action('admin_init', function () {
     add_settings_field(
         'next_preview_endpoint_secret',
         __('Nextjs Preview Secret', NEXTJS_TEXT_DOMAIN),
-        'NextjsPreviewFieldText',
+        'nextjsPreviewFieldText',
         $key,
         'preview', [
             'name' => "{$key}[next_preview_endpoint_secret]",
@@ -105,7 +109,7 @@ add_action('admin_init', function () {
     add_settings_field(
         'next_preview_method',
         __('Preview method', NEXTJS_TEXT_DOMAIN),
-        'NextJSPreviewFieldSelect',
+        'nextJSPreviewFieldSelect',
         $key,
         'general', [
             'name' => "{$key}[next_preview_method]",
@@ -122,7 +126,7 @@ add_action('admin_init', function () {
     add_settings_field(
         'NextJSPreviewDivider2',
         '',
-        'NextJSLineDivider',
+        'nextJSLineDivider',
         $key,
         'preview', [
             'name' => "{$key}[NextJSPreviewDivider2]",
@@ -134,7 +138,7 @@ add_action('admin_init', function () {
     add_settings_field(
         'webhook_post_types_selected',
         __('Post Types with changed preview url', NEXTJS_TEXT_DOMAIN),
-        'NextJSPreviewFieldCheckboxes',
+        'nextJSPreviewFieldCheckboxes',
         $key,
         'postTypes', [
             'name' => "{$key}[webhook_post_types_selected]",
@@ -148,7 +152,7 @@ add_action('admin_init', function () {
     add_settings_field(
         'webhook_post_types',
         __('Automatic Deploy Post Types', NEXTJS_TEXT_DOMAIN),
-        'NextJSPreviewFieldCheckboxes',
+        'nextJSPreviewFieldCheckboxes',
         $key,
         'postTypes', [
             'name' => "{$key}[webhook_post_types]",

@@ -1,4 +1,13 @@
 <?php 
+/**
+ * Handles preview page template
+ */
+
+/**
+ * Setups preview page for 
+ * 
+ * @param string $template directory uri to template
+ */
 function setupNextjsPreviewTemplate($template)
 {
     if (is_preview()) {
