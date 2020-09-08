@@ -8,6 +8,13 @@
  * Author URI:        https://priver.dev
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * php version 7.2.10
+ * 
+ * @category Plugins
+ * @package  Wordpress
+ * @author   Emil Priver <emil@priver.dev>
+ * @license  https://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ * @link     https://priver.dev
  */
 
 define('NEXTJS_PLUGIN_DIRECTORY', plugin_dir_path(__FILE__));
@@ -43,7 +50,7 @@ add_action('admin_menu', function () {
         __('NextJS Preview', NEXTJS_TEXT_DOMAIN),
         'manage_options',
         'nextjs-preview-options-page',
-        'NextJSPreviewSettingsPage'
+        'nextJSPreviewSettingsPage'
     );
 });
 
@@ -51,9 +58,15 @@ add_action('admin_menu', function () {
  * Trigger deploy from admin bar
  */
 add_action('wp_ajax_nextjs_preview_deploy_website', 'triggerDeploy');
+
+/**
+ * Ajax function that trigger a deploy only if user is loggedin 
+ * 
+ * @return Number
+ */
 function triggerDeploy()
 {
     do_action('nextjs_preview_deploy_webhook');
     echo 1;
-    die();
+    exit();
 }

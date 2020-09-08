@@ -1,4 +1,8 @@
 <?php
+/**
+ * Template file which is used on preview
+ */
+
 $id = get_the_ID();
 $postType = get_post_type($id);
 $previewURL = getNextjsPreviewEndpointUrl();

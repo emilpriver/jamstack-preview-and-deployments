@@ -1,5 +1,14 @@
 <?php
-function trigger_deploy_button($bar)
+/**
+ * Register admin bar functions
+ */
+
+ /**
+  * Register admin bar function to trigger deploy website from admin
+  *
+  * @return None
+  */
+function TriggerDeployButton($bar)
 {
     $bar->add_node(
         array(
@@ -15,4 +24,4 @@ function trigger_deploy_button($bar)
     );
 }
 
-add_action('admin_bar_menu', 'trigger_deploy_button', 50);
+add_action('admin_bar_menu', 'TriggerDeployButton', 50);
