@@ -103,6 +103,23 @@ add_action('admin_init', function () {
     );
 
     add_settings_field(
+        'next_preview_method',
+        __('Preview method', NEXTJS_TEXT_DOMAIN),
+        'NextJSPreviewFieldSelect',
+        $key,
+        'general', [
+            'name' => "{$key}[next_preview_method]",
+            'value' => getNextjsPreviewMethod(),
+            'choices' => [
+                'redirect' => 'Redirect',
+                'iframe' => 'Iframe',
+            ],
+            'default' => 'redirect',
+            'description' => __('The way to show the website for the user. Either redirect the user to the preview page or show the preview page inside of an iframe', NEXTJS_TEXT_DOMAIN),
+        ]
+    );
+
+    add_settings_field(
         'NextJSPreviewDivider2',
         '',
         'NextJSLineDivider',

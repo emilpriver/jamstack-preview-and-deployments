@@ -17,6 +17,12 @@ function getNextjsPreviewWebhookMethod()
     return !empty($options['webhook_method']) ? $options['webhook_method'] : null;
 }
 
+function getNextjsPreviewMethod()
+{
+    $options = getNextjsPreviewOptions();
+    return !empty($options['next_preview_method']) ? $options['next_preview_method'] : null;
+}
+
 function getNextJSPreviewStatusBadgeUrl()
 {
     $options = getNextjsPreviewOptions();
