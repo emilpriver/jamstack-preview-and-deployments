@@ -1,4 +1,4 @@
-=== Nextjs Preview Deployments ===
+=== Jamstack Preview and Deployments ===
 Contributors: emilpriver
 Tags: wordpress, Preview, JAMstack, Deployments
 Stable tag: 1

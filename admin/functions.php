@@ -8,9 +8,9 @@
   * 
   * @return Array
   */
-function getNextjsPreviewOptions()
+function jamstackPreviewAndDeploymentsGetOptions()
 {
-    return get_option(NEXTJS_SETTINGS_OPTIONS_KEY, []);
+    return get_option(JAMSTACK_PREVIEW_AND_DEPLOYMENTS_OPTIONS_KEY, []);
 }
 
 /**
@@ -18,9 +18,9 @@ function getNextjsPreviewOptions()
  * 
  * @return String
  */
-function getNextjsPreviewWebhookUrl()
+function jamstackPreviewAndDeploymentsGetWebhookUrl()
 {
-    $options = getNextjsPreviewOptions();
+    $options = jamstackPreviewAndDeploymentsGetOptions();
     return !empty($options['webhook_url']) ? $options['webhook_url'] : null;
 }
 
@@ -29,9 +29,9 @@ function getNextjsPreviewWebhookUrl()
  * 
  * @return String
  */
-function getNextjsPreviewWebhookMethod()
+function jamstackPreviewAndDeploymentsGetWebhookMethod()
 {
-    $options = getNextjsPreviewOptions();
+    $options = jamstackPreviewAndDeploymentsGetOptions();
     return !empty($options['webhook_method']) ? $options['webhook_method'] : null;
 }
 
@@ -40,10 +40,10 @@ function getNextjsPreviewWebhookMethod()
  * 
  * @return String
  */
-function getNextjsPreviewMethod()
+function jamstackPreviewAndDeploymentsPreviewMethod()
 {
-    $options = getNextjsPreviewOptions();
-    return !empty($options['next_preview_method']) ? $options['next_preview_method'] : null;
+    $options = jamstackPreviewAndDeploymentsGetOptions();
+    return !empty($options['jamstack_preview_method']) ? $options['jamstack_preview_method'] : null;
 }
 
 /**
@@ -51,9 +51,9 @@ function getNextjsPreviewMethod()
  * 
  * @return String
  */
-function getNextJSPreviewStatusBadgeUrl()
+function jamstackPreviewAndDeploymentsStatusBadgeUrl()
 {
-    $options = getNextjsPreviewOptions();
+    $options = jamstackPreviewAndDeploymentsGetOptions();
     return !empty($options['deployment_badge_url']) ? $options['deployment_badge_url'] : null;
 }
 
@@ -62,7 +62,7 @@ function getNextJSPreviewStatusBadgeUrl()
  * 
  * @return Array
  */
-function getNextJSPreviewPostTypes()
+function jamstackPreviewAndDeploymentsPostTypes()
 {
     $return = [];
     foreach (get_post_types(null, 'objects') as $choice) {
@@ -76,9 +76,9 @@ function getNextJSPreviewPostTypes()
  * 
  * @return Array
  */
-function getNextJSPreviewActivePostTypes()
+function jamstackPreviewAndDeploymentsActivePostTypes()
 {
-    $options = getNextjsPreviewOptions();
+    $options = jamstackPreviewAndDeploymentsGetOptions();
     return !empty($options['webhook_post_types']) ? $options['webhook_post_types'] : [];
 }
 
@@ -87,8 +87,8 @@ function getNextJSPreviewActivePostTypes()
  * 
  * @return Array
  */
-function getNextJSPreviewSelectedPostTypes() {
-    $options = getNextjsPreviewOptions();
+function jamstackPreviewAndDeploymentsSelectedPostTypes() {
+    $options = jamstackPreviewAndDeploymentsGetOptions();
     return !empty($options['webhook_post_types_selected']) ? $options['webhook_post_types_selected'] : [];
 }
 
@@ -97,10 +97,10 @@ function getNextJSPreviewSelectedPostTypes() {
  * 
  * @return String
  */
-function getNextjsPreviewEndpointUrl()
+function jamstackPreviewAndDeploymentsPreviewEndpointUrl()
 {
-    $options = getNextjsPreviewOptions();
-    return !empty($options['next_preview_endpoint']) ? $options['next_preview_endpoint'] : null;
+    $options = jamstackPreviewAndDeploymentsGetOptions();
+    return !empty($options['jamstack_preview_endpoint']) ? $options['jamstack_preview_endpoint'] : null;
 }
 
 /**
@@ -108,8 +108,8 @@ function getNextjsPreviewEndpointUrl()
  * 
  * @return String
  */
-function getNextjsPreviewEndpointSecret()
+function jamstackPreviewAndDeploymentsEndpointSecret()
 {
-    $options = getNextjsPreviewOptions();
-    return !empty($options['next_preview_endpoint_secret']) ? $options['next_preview_endpoint_secret'] : null;
+    $options = jamstackPreviewAndDeploymentsGetOptions();
+    return !empty($options['jamstack_preview_endpoint_secret']) ? $options['jamstack_preview_endpoint_secret'] : null;
 }

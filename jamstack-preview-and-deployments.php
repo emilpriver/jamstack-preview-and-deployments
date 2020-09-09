@@ -17,27 +17,27 @@
  * @link     https://priver.dev
  */
 
-define('NEXTJS_PLUGIN_DIRECTORY', plugin_dir_path(__FILE__));
-define('NEXTJS_URL_DIRECTORY', plugin_dir_url(__FILE__));
-define('NEXTJS_TEXT_DOMAIN', 'NextJSTextDomain');
-define('NEXTJS_SETTINGS_KEY', 'NextJSSettings');
-define('NEXTJS_SETTINGS_OPTIONS_KEY', 'NextJSSettingsOptionsKey');
+define('JAMSTACK_PREVIEW_AND_DEPLYOMENTS_PLUGIN_DIRECTORY', plugin_dir_path(__FILE__));
+define('JAMSTACK_PREVIEW_AND_DEPLOYMENTS_URL_DIRECTORY', plugin_dir_url(__FILE__));
+define('JAMSTACK_PREVIEW_AND_DEPLOYMENTS_TEXT_DOMAIN', 'JamstackPreviewAndDEeloymentsTextDomain');
+define('JAMSTACK_PREVIEW_AND_DEPLOYMENTS_SETTINGS_KEY', 'JamstackPreviewAndDeploymentsSettings');
+define('JAMSTACK_PREVIEW_AND_DEPLOYMENTS_OPTIONS_KEY', 'JamstackPreviewAndDeploymentsOptionsKey');
 
 /**
  * Needed includes
  */
-require_once NEXTJS_PLUGIN_DIRECTORY . 'admin/admin.php';
-require_once NEXTJS_PLUGIN_DIRECTORY . 'admin/functions.php';
-require_once NEXTJS_PLUGIN_DIRECTORY . 'preview/preview.php';
-require_once NEXTJS_PLUGIN_DIRECTORY . 'actions.php';
-require_once NEXTJS_PLUGIN_DIRECTORY . 'admin-bar.php';
+require_once JAMSTACK_PREVIEW_AND_DEPLYOMENTS_PLUGIN_DIRECTORY . 'admin/admin.php';
+require_once JAMSTACK_PREVIEW_AND_DEPLYOMENTS_PLUGIN_DIRECTORY . 'admin/functions.php';
+require_once JAMSTACK_PREVIEW_AND_DEPLYOMENTS_PLUGIN_DIRECTORY . 'preview/preview.php';
+require_once JAMSTACK_PREVIEW_AND_DEPLYOMENTS_PLUGIN_DIRECTORY . 'actions.php';
+require_once JAMSTACK_PREVIEW_AND_DEPLYOMENTS_PLUGIN_DIRECTORY . 'admin-bar.php';
 
 /**
  * Include scripts and styles
  */
 add_action('admin_enqueue_scripts', function () {
-    wp_enqueue_script('nextjsPreviewScripts', NEXTJS_URL_DIRECTORY . 'admin/js/admin.js', array(), false, true);
-    wp_enqueue_style('nextjsPreviewStyles', NEXTJS_URL_DIRECTORY . 'admin/css/admin.css');
+    wp_enqueue_script('jamstackPreviewDeploymentsScripts', JAMSTACK_PREVIEW_AND_DEPLOYMENTS_URL_DIRECTORY . 'admin/js/admin.js', array(), false, true);
+    wp_enqueue_style('jamstackPreviewDeploymentsStyles', JAMSTACK_PREVIEW_AND_DEPLOYMENTS_URL_DIRECTORY . 'admin/css/admin.css');
 });
 
 /**
@@ -46,27 +46,23 @@ add_action('admin_enqueue_scripts', function () {
 
 add_action('admin_menu', function () {
     add_options_page(
-        __('NextJS Preview', NEXTJS_TEXT_DOMAIN),
-        __('NextJS Preview', NEXTJS_TEXT_DOMAIN),
+        __('Jamstack preview and deployments', JAMSTACK_PREVIEW_AND_DEPLOYMENTS_TEXT_DOMAIN),
+        __('Jamstack preview and deployments', JAMSTACK_PREVIEW_AND_DEPLOYMENTS_TEXT_DOMAIN),
         'manage_options',
-        'nextjs-preview-options-page',
-        'nextJSPreviewSettingsPage'
+        'jamstack-preview-and-deployments',
+        'jamstackPreviewAndDeployments'
     );
 });
-
-/**
- * Trigger deploy from admin bar
- */
-add_action('wp_ajax_nextjs_preview_deploy_website', 'triggerDeploy');
 
 /**
  * Ajax function that trigger a deploy only if user is loggedin 
  * 
  * @return Number
  */
-function triggerDeploy()
+add_action('wp_ajax_jamstack_deploy_website', 'jamstackPreviewAndDeploymentsTriggerDeploy');
+function jamstackPreviewAndDeploymentsTriggerDeploy()
 {
-    do_action('nextjs_preview_deploy_webhook');
+    do_action('jamstack_preview_deployments_deploy_webhook');
     echo 1;
-    exit();
+    wp_die();
 }

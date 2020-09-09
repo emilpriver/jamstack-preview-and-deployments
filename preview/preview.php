@@ -8,16 +8,16 @@
  * 
  * @param string $template directory uri to template
  */
-function setupNextjsPreviewTemplate($template)
+function setupJamstackPreviewTemplate($template)
 {
     if (is_preview()) {
         $id = get_the_ID();
         $postType = get_post_type($id);
-        if (in_array($postType, getNextJSPreviewSelectedPostTypes())) {
-            $previewURL = getNextjsPreviewEndpointUrl();
-            $previewURLSecret = getNextjsPreviewEndpointSecret();
+        if (in_array($postType, jamstackPreviewAndDeploymentsSelectedPostTypes())) {
+            $previewURL = jamstackPreviewAndDeploymentsPreviewEndpointUrl();
+            $previewURLSecret = jamstackPreviewAndDeploymentsEndpointSecret();
             if ($previewURL) {
-                return NEXTJS_PLUGIN_DIRECTORY . 'preview/template.php';
+                return JAMSTACK_PREVIEW_AND_DEPLYOMENTS_PLUGIN_DIRECTORY . 'preview/template.php';
             }
 
             return $template;
@@ -25,4 +25,4 @@ function setupNextjsPreviewTemplate($template)
     }
     return $template;
 }
-add_filter('template_include', 'setupNextjsPreviewTemplate', 1, 99);
+add_filter('template_include', 'setupJamstackPreviewTemplate', 1, 99);

@@ -8,7 +8,7 @@
   *
   * @return HTML
   */
-function nextjsPreviewFieldUrl($args = [])
+function jamstackPreviewAndDeploymentsFieldUrl($args = [])
 {
     ?>
     <div>
@@ -23,7 +23,7 @@ function nextjsPreviewFieldUrl($args = [])
  *
  * @return HTML
  */
-function nextjsPreviewFieldText($args = [])
+function jamstackPreviewAndDeploymentsFieldText($args = [])
 {
     ?>
     <div>
@@ -38,7 +38,7 @@ function nextjsPreviewFieldText($args = [])
  *
  * @return HTML
  */
-function nextJSPreviewFieldSelect($args = [])
+function jamstackPreviewAndDeploymentsFieldSelect($args = [])
 {   
     ?><div>
         <select name="<?php echo esc_attr($args['name']);?>">
@@ -55,7 +55,7 @@ function nextJSPreviewFieldSelect($args = [])
  *
  * @return HTML
  */
-function nextJSPreviewFieldCheckboxes($args = [])
+function jamstackPreviewAndDeploymentsFieldCheckboxes($args = [])
 {
     $args['value'] = is_array($args['value']) ? $args['value'] : [$args['value']];?>
     <fieldset>
@@ -80,7 +80,7 @@ function nextJSPreviewFieldCheckboxes($args = [])
  *
  * @return HTML
  */
-function nextJSLineDivider()
+function jamstackPreviewAndDeploymentsLineDivider()
 {
     ?>
     <hr>
