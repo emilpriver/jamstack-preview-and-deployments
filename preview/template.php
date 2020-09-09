@@ -2,12 +2,23 @@
 /**
  * Template file which is used on preview
  */
+$getQueriedObject = get_queried_object();
+$type = '';
+$typeValue = '';
+
+if (get_class($getQueriedObject) === 'WP_Term') {
+    $type = 'taxonomy';
+    $typeValue = $getQueriedObject->taxonomy;
+} else {
+    $type = 'postType';
+    $typeValue = $getQueriedObject->post_type;
+}
 
 $id = get_the_ID();
 $postType = get_post_type($id);
 $previewURL = jamstackPreviewAndDeploymentsPreviewEndpointUrl();
 $previewURLSecret = jamstackPreviewAndDeploymentsEndpointSecret();
-$url = str_replace(' ', '', "$previewURL?id=$id&secret=$previewURLSecret&postType=$postType");
+$url = str_replace(' ', '', "$previewURL?id=$id&secret=$previewURLSecret&type=$type&typeValue=$typeValue");
 $method = jamstackPreviewAndDeploymentsPreviewMethod();
 ?>
 <html lang="en">
@@ -82,20 +93,20 @@ $method = jamstackPreviewAndDeploymentsPreviewMethod();
 
     <body>
     <?php if ($url):
-			if ($method === 'redirect') :?>
-					<script>
-						window.onload = function() {
-							window.location = "<?php echo $url; ?>"
-						}
-					</script>
-			<?php else: ?>
+    if ($method === 'redirect'): ?>
+							<script>
+								window.onload = function() {
+									window.location = "<?php echo $url; ?>"
+								}
+							</script>
+					<?php else: ?>
 				<iframe
 					id='preview'
 					src="<?php echo $url; ?>"
 					frameborder="0"
         ></iframe>
 			<?php endif;
-    endif; ?>
+endif;?>
 
     <div id="content" class="error" style="display: none;">
         <h1>Preview broken</h1>
