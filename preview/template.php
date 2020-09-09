@@ -117,6 +117,6 @@ $method = jamstackPreviewAndDeploymentsPreviewMethod();
             Please ensure your URL is correct.
         </p>
     </div>
-</body>
+	</body>
 </html>
 <?php wp_footer();?>
