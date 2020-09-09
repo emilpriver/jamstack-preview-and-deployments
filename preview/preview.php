@@ -8,7 +8,7 @@
  * 
  * @param string $template directory uri to template
  */
-function setupJamstackPreviewTemplate($template)
+function JamstackPreviewAndDeploymentsPreviewTemplate($template)
 {
     if (is_preview()) {
         $id = get_the_ID();
@@ -25,4 +25,4 @@ function setupJamstackPreviewTemplate($template)
     }
     return $template;
 }
-add_filter('template_include', 'setupJamstackPreviewTemplate', 1, 99);
+add_filter('template_include', 'JamstackPreviewAndDeploymentsPreviewTemplate', 1, 99);

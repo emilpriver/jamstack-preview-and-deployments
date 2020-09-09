@@ -24,7 +24,7 @@ add_action('jamstack_preview_deployments_deploy_webhook', 'jamstackPreviewAndDep
  *
  * @param integer $post_id post_id
  */
-function checkIfAutoDeployWebsite($post_id)
+function jamstackPreviewAndDeploymentscheckIfAutoDeployWebsite($post_id)
 {
     if (get_post_status($post_id) === 'draft') {
         return;
@@ -38,4 +38,4 @@ function checkIfAutoDeployWebsite($post_id)
         do_action('jamstack_preview_deployments_deploy_webhook');
     }
 }
-add_action('save_post', 'checkIfAutoDeployWebsite', 10, 3);
+add_action('save_post', 'jamstackPreviewAndDeploymentscheckIfAutoDeployWebsite', 10, 3);

@@ -8,7 +8,7 @@
   *
   * @return None
   */
-function TriggerDeployButton($bar)
+function JamstackPreviewAndDeploymentsTriggerDeployButton($bar)
 {
     $bar->add_node(
         array(
@@ -24,4 +24,4 @@ function TriggerDeployButton($bar)
     );
 }
 
-add_action('admin_bar_menu', 'TriggerDeployButton', 50);
+add_action('admin_bar_menu', 'JamstackPreviewAndDeploymentsTriggerDeployButton', 50);
