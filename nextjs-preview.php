@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name:       Next.JS Preview
- * Plugin URI:        https://github.com/emilpriver/nextjs-preview
- * Description:       Enable preview Next.JS when sourcing from a wordpress site. Works both with REST and Graphql.
+ * Plugin Name:       JAMstack preview and deployments
+ * Plugin URI:        https://github.com/emilpriver/jamstack-preview-and-deployments
+ * Description:       Enable preview and deployments from the wordpress admin to your JAMstack application.
  * Version:           1
  * Author:            Emil Privér
  * Author URI:        https://priver.dev

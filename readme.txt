@@ -1,14 +1,16 @@
 === Nextjs Preview Deployments ===
 Contributors: emilpriver
-Tags: wordpress, NextJS, JAMstack
+Tags: wordpress, Preview, JAMstack, Deployments
 Stable tag: 1
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Make your Wordpress be able to preview Nextjs Websites
+Make your wordpress work with JAMstack webapplications with previews and automatic deployments.
 
 == Description ==
-This plugins makes it possible to preview posts and pages from the wordpress admin on an NextJS application
+This plugin makes it possible to preview JAMstack websites from wordpress admin and start a build from the Wordpress admin.
+
+OBS: This plugin does not automatic make your web app work with preview. You still need do stuffs on your own end.
 
 == Screenshots ==
 1. Admin page
