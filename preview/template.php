@@ -5,10 +5,10 @@
 
 $id = get_the_ID();
 $postType = get_post_type($id);
-$previewURL = getNextjsPreviewEndpointUrl();
-$previewURLSecret = getNextjsPreviewEndpointSecret();
+$previewURL = jamstackPreviewAndDeploymentsPreviewEndpointUrl();
+$previewURLSecret = jamstackPreviewAndDeploymentsEndpointSecret();
 $url = str_replace(' ', '', "$previewURL?id=$id&secret=$previewURLSecret&postType=$postType");
-$method = getNextjsPreviewMethod();
+$method = jamstackPreviewAndDeploymentsPreviewMethod();
 ?>
 <html lang="en">
 
@@ -16,7 +16,7 @@ $method = getNextjsPreviewMethod();
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>NextJS Preview</title>
+	<title>Jamstack Preview</title>
 	<style>
 		body {
 			margin: 0;
@@ -100,7 +100,7 @@ $method = getNextjsPreviewMethod();
     <div id="content" class="error" style="display: none;">
         <h1>Preview broken</h1>
         <p>The Preview webhook set on the <a
-                    href="<?php echo get_bloginfo('url'); ?>/wp-admin/options-general.php?page=nextjs-preview-options-page">settings
+                    href="<?php echo get_bloginfo('url'); ?>/wp-admin/options-general.php?page=jamstack-preview-and-deployments">settings
                 page</a> isn't working properly.
             <br>
             Please ensure your URL is correct.

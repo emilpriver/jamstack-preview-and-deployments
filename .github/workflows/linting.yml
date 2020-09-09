@@ -17,5 +17,5 @@ jobs:
         max_defects_rate: '0.2'
         max_complex_functions_rate: '0.2'
         max_long_functions_rate: '0.2'
-        project_name: 'Nextjs Preview Wordpress Plugin'
+        project_name: 'Jamstack Preview and Deployments Wordpress Plugin'
         max_timeout_sec: '600'

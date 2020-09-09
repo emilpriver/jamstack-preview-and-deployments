@@ -12,13 +12,13 @@ function TriggerDeployButton($bar)
 {
     $bar->add_node(
         array(
-            'id' => 'nextjs-preview-deploy-button',
+            'id' => 'jamstack-preview-deployments-deploy-button',
             'parent' => 'top-secondary',
             'href' => 'javascript:void(0)',
             'title' => 'Deploy Website',
             'href' => '',
             'meta' => [
-                'class' => 'nextjs-preview-deploy-button'
+                'class' => 'jamstack-preview-deployments-deploy-button'
             ]
         )
     );

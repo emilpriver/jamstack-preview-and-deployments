@@ -8,16 +8,16 @@
  *
  * @return None
  */
-function nextJSSendDeployWebhookRequest()
+function jamstackPreviewAndDeploymentsSendDeployWebhookRequest()
 {
-    $url = getNextjsPreviewWebhookUrl();
-    if (getNextjsPreviewWebhookMethod() === 'POST') {
+    $url = jamstackPreviewAndDeploymentsGetWebhookUrl();
+    if (jamstackPreviewAndDeploymentsGetWebhookMethod() === 'POST') {
         return wp_safe_remote_post($url);
     }
 
     wp_safe_remote_get($url);
 }
-add_action('nextjs_preview_deploy_webhook', 'nextJSSendDeployWebhookRequest');
+add_action('jamstack_preview_deployments_deploy_webhook', 'jamstackPreviewAndDeploymentsSendDeployWebhookRequest');
 
 /**
  * Trigger deploy if post update
@@ -34,8 +34,8 @@ function checkIfAutoDeployWebsite($post_id)
     }
 
     $postType = get_post_type($post_id);
-    if (in_array($postType, getNextJSPreviewActivePostTypes())) {
-        do_action('nextjs_preview_deploy_webhook');
+    if (in_array($postType, jamstackPreviewAndDeploymentsActivePostTypes())) {
+        do_action('jamstack_preview_deployments_deploy_webhook');
     }
 }
 add_action('save_post', 'checkIfAutoDeployWebsite', 10, 3);
