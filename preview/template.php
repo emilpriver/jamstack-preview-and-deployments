@@ -93,20 +93,20 @@ $method = jamstackPreviewAndDeploymentsPreviewMethod();
 
     <body>
     <?php if ($url):
-    if ($method === 'redirect'): ?>
-							<script>
-								window.onload = function() {
-									window.location = "<?php echo $url; ?>"
-								}
-							</script>
-					<?php else: ?>
+    	if ($method === 'redirect'): ?>
+				<script>
+					window.onload = function() {
+						window.location = "<?php echo $url; ?>"
+					}
+				</script>
+			<?php else: ?>
 				<iframe
 					id='preview'
 					src="<?php echo $url; ?>"
 					frameborder="0"
         ></iframe>
 			<?php endif;
-endif;?>
+		endif;?>
 
     <div id="content" class="error" style="display: none;">
         <h1>Preview broken</h1>
