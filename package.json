@@ -1,0 +1,15 @@
+{
+  "name": "jamstack-preview-and-deployments",
+  "version": "1.0.0",
+  "description": "Wordpress preview jamstack and deployments",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilpriver/nextjs-preview-deployments.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilpriver/nextjs-preview-deployments/issues"
+  },
+  "homepage": "https://github.com/emilpriver/nextjs-preview-deployments#readme"
+}
