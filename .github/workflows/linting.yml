@@ -1,3 +1,4 @@
+name: Linting code
 on: [push]
 
 jobs:
