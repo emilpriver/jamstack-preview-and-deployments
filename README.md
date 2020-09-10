@@ -1,5 +1,6 @@
 ![Code Quality Grade](https://www.code-inspector.com/project/13311/score/svg)
 ![Code Score](https://www.code-inspector.com/project/13311/status/svg)
+![Linting code](https://github.com/emilpriver/jamstack-preview-and-deployments/workflows/Linting%20code/badge.svg)
 
 Code inspector: https://frontend.code-inspector.com/public/project/13311/jamstack-preview-and-deployments/dashboard
 
