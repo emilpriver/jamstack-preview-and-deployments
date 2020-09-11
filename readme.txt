@@ -3,6 +3,8 @@ Contributors: emilpriver
 Tags: wordpress, Preview, JAMstack, Deployments
 Stable tag: 1
 License: GPL v2 or later
+Tested up to: 5.5.1
+Requires PHP: 5.6
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Make your wordpress work with JAMstack webapplications with previews and automatic deployments.
