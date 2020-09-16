@@ -1,7 +1,7 @@
 === Jamstack Preview and Deployments ===
 Contributors: emilpriver
 Tags: next.js, preview, jamstack, deployments
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPL v2 or later
 Tested up to: 5.5.1
 Requires PHP: 5.6
