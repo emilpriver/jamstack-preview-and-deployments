@@ -2,7 +2,7 @@ window.onload = function () {
     document.querySelectorAll('.jamstack-preview-deployments-deploy-button').forEach(item => {
         item.addEventListener("click", function () {
             let formData = new FormData();
-            formData.append('action', 'wp_ajax_jamstack_deploy_website');
+            formData.append('action', 'jamstack_deploy_website');
 
             item.innerHTML = '<div class="ab-item ab-empty-item">Sending Deploy</div>';
             fetch(ajaxurl, {
