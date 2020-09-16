@@ -3,7 +3,7 @@
  * Plugin Name:       JAMstack preview and deployments
  * Plugin URI:        https://github.com/emilpriver/jamstack-preview-and-deployments
  * Description:       Enable preview and deployments from the wordpress admin to your JAMstack application.
- * Version:           1.1
+ * Version:           1.1.1
  * Author:            Emil Privér
  * Author URI:        https://priver.dev
  * License:           GPL v2 or later
