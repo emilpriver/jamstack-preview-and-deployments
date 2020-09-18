@@ -12,3 +12,5 @@ Also supports to auto deploy website on change on selected post types.
 https://github.com/vercel/next.js/tree/canary/examples/cms-wordpress
 
 
+## Docs
+https://emilpriver.github.io/jamstack-preview-and-deployments
